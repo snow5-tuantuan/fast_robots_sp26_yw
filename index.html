@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Fast Robots</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,16 +23,39 @@
       padding: 60px 20px;
     }
 
-    img {
-      width: 300px;
-      margin-top: 20px;
+    /* Profile layout */
+    .profile-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    /* Left column: images */
+    .profile-images {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .profile-images img {
+      width: 180px;
+      border-radius: 8px;
+    }
+
+    /* Right column: text */
+    .profile-text {
+      text-align: left;
+      max-width: 400px;
+      font-size: 16px;
     }
 
     button {
       padding: 12px 24px;
       font-size: 16px;
       cursor: pointer;
-      margin-top: 40px;
+      margin: 40px 0;
     }
   </style>
 </head>
@@ -45,10 +69,23 @@
     <p>Lecture: 12810</p>
     <p>Lab: 12813</p>
 
-    <p>Hello, I'm Snow Wu, currently a junior student majoring in ECE.<p>
-    <p>I'm one of the co-leads of CUAir Electrical.<p>
-    </p>I enjoy snowboard carving in my free time.</p>
+    <!-- Images + text section -->
+    <div class="profile-section">
 
+      <!-- Left: images -->
+      <div class="profile-images">
+        <img src="me1.jpg" alt="Photo of Snow Wu">
+        <img src="me2.jpg" alt="Photo of Snow Wu">
+      </div>
+
+      <!-- Right: text -->
+      <div class="profile-text">
+        <p>Hello, I'm Snow Wu, currently a junior student majoring in ECE.</p>
+        <p>I'm one of the co-leads of CUAir Electrical.</p>
+        <p>I enjoy snowboard carving in my free time.</p>
+      </div>
+
+    </div>
   </div>
 
   <!-- Button outside background -->
