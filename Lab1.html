@@ -49,20 +49,23 @@
   <img src="lab1B_task1_1.png" alt="task1 python" width="400" height="250">
   <img src="lab1B_task1_2.png" alt="task1 Arduino" width="400" height="250">
   <p>A string is sent from computer to the Artemis board using the ECHO command. The computer receive and print an augmented string.</p>
-  <p>Inside the case of ECHO, I initialize a char variable "char_arr", used commands (append, get_next_value) to set the form of the string to be printed, then use serial print to print the string in serianl monitor.</p>
+  <p>Inside the case of ECHO, I initialize a char variable "char_arr", used functions (append, get_next_value) to set the form of the string to be printed, then use serial print to print the string in serianl monitor.</p>
   <p>In Jupyter lab, laptop sends command using ble.send_command, and print out the received string with ble.receive_string and print.</p>
   
   <h3>Task 2: send three floats</h3>
   <img src="lab1B_task2_1.png" alt="task2 python" width="400" height="250">
   <img src="lab1B_task2_2.png" alt="task2 Arduino" width="400" height="250">
-  <p>three floats (1.20, 2.50, 3.50) in string form were sent to Artemis board using the SEND_THREE_FLOATS command, then the board extract the three floats values from the string in the Arduino sketch.</p>
-  <p>Inside the case of SEND_THREE_FLOATS, I initialize three float variables (float_a, float_b, float_c), then use command get_next_value to extract the floats by order. After that we used serial print to print out extracted floats on serial monitor.</p>
+  <p>Three floats (1.20, 2.50, 3.50) in string form were sent to Artemis board using the SEND_THREE_FLOATS command, then the board extract the three floats values from the string in the Arduino sketch.</p>
+  <p>Inside the case of SEND_THREE_FLOATS, I initialize three float variables (float_a, float_b, float_c), then use function get_next_value to extract the floats by order. After that we used serial print to print out extracted floats on serial monitor.</p>
   <p>In Jupyter lab, laptop sent three floats in this form "1.2|2.5|3.5", then I observed results printed on serial monitor.</p>
   
   <h3>Task 3: add command GET_TIME_MILLIS</h3>
-  <img src="lab1B_task3_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task3_2.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task3_3.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task3_2.png" alt="task3 python" width="400" height="250">
+  <img src="lab1B_task3_1.png" alt="task3 Arduino" width="400" height="250">
+  <img src="lab1B_task3_3.png" alt="task3 cmd_types.py" width="400" height="250">
+  <p>A command GET_TIME_MILLIS is added, this command is for making robot replya string containing time information.</p>
+  <p>A case of GEAT_TIME_MILLIS is added in the loop, accordingly it is also added in the global variables and cmd_types accordingly. I initialize int variable "time", use function millis() to extract current time in milliseconds, store current time data in variable "time", then format the extracted informaiton and serial print it.</p>
+  <p>In Jupyter lab, command GET_TIME_MILLIS is called, the printed out string is in form of "T:[current time in milliseconds]"</p>
   
   <h3>Task 4: notification handler</h3>
   <img src="lab1B_task4_1.png" alt="Serial monitor test" width="400" height="250">
