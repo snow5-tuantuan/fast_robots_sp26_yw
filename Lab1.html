@@ -2,118 +2,337 @@
 <html>
 <head>
   <title>Lab 1</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    
+    /* Headings with gradient and subtle shadows */
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #3498db;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    
+    h2 {
+      color: #2980b9;
+      padding: 15px;
+      background-color: #e8f4fc;
+      border-left: 5px solid #3498db;
+      border-radius: 4px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    
+    h3 {
+      color: #2c3e50;
+      padding: 10px 0;
+      border-bottom: 2px solid #ecf0f1;
+      margin-top: 30px;
+      font-size: 1.4rem;
+    }
+    
+    /* Paragraph styling */
+    p {
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+    
+    /* Image and video containers */
+    img, video {
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    img:hover, video:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Media grid for multiple images */
+    .media-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 25px;
+      margin: 25px 0;
+    }
+    
+    .media-group img, .media-group video {
+      margin: 0;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Task container styling */
+    .task {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid #eaeaea;
+    }
+    
+    /* Back link styling */
+    a {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 25px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 5px rgba(52, 152, 219, 0.3);
+    }
+    
+    a:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 8px rgba(52, 152, 219, 0.4);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .media-group {
+        grid-template-columns: 1fr;
+      }
+      
+      img, video {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+    
+    /* Subtle animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .task {
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    /* Task numbering visual indicator */
+    h3:before {
+      content: "▶";
+      color: #3498db;
+      margin-right: 10px;
+      font-size: 0.9em;
+    }
+    
+    /* Code-like styling for technical terms */
+    code {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #c7254e;
+      font-size: 0.9em;
+    }
+    
+    /* Section separator */
+    .section-separator {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3498db, transparent);
+      margin: 40px 0;
+    }
+  </style>
 </head>
 <body>
   <h1>Lab 1</h1>
+  
+  <div class="section-separator"></div>
+  
   <h2>1A</h2>
   
-  <h3>Task 1: connect board with computer</h3>
-  <img src="lab1A_connection.jpg" alt="Board connection" width="400" height="250">
-
-  <p>I used USB connection to connect my laptop to the Artemis boad.</p>
-  <img src="lab1A_arduino.jpg" alt="Arduino board & port setup" width="400" height="250">
-  <p>In Arduino IDE, the target board is set to be "RedBoardArtemis Nano", and the port is set to "COM3".</p>
+  <div class="task">
+    <h3>Task 1: connect board with computer</h3>
+    <div class="media-group">
+      <img src="lab1A_connection.jpg" alt="Board connection" width="400" height="250">
+      <img src="lab1A_arduino.jpg" alt="Arduino board & port setup" width="400" height="250">
+    </div>
+    <p>I used USB connection to connect my laptop to the Artemis boad.</p>
+    <p>In Arduino IDE, the target board is set to be "RedBoardArtemis Nano", and the port is set to "COM3".</p>
+  </div>
   
-  <h3>Task 2: Blink</h3>
-  <video width="640" height="360" controls>
-  <source src="lab1A_task1.mp4" type="video/mp4">
-  </video>
-
-  <h3>Task 3: Serial</h3>
-  <img src="lab1A_task3.png" alt="Serial monitor test" width="400" height="250">
-  <p>A string "ggggg" is sent as input to serial port, the board sent back the same string and print out on the serial monitor.</p>
+  <div class="task">
+    <h3>Task 2: Blink</h3>
+    <video width="640" height="360" controls>
+      <source src="lab1A_task1.mp4" type="video/mp4">
+    </video>
+  </div>
   
-  <h3>Task 4: analog Read</h3>
-  <video width="640" height="360" controls>
-  <source src="lab1A_task4.mp4" type="video/mp4">
-  </video>
-  <p>The board has a built-in sensor as peripheral controlled by the microcontroller. I tried to use hand to head up the board, constantly updated data about temperature is printed out on the serial monitor</p>
+  <div class="task">
+    <h3>Task 3: Serial</h3>
+    <img src="lab1A_task3.png" alt="Serial monitor test" width="400" height="250">
+    <p>A string <code>"ggggg"</code> is sent as input to serial port, the board sent back the same string and print out on the serial monitor.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 4: analog Read</h3>
+    <video width="640" height="360" controls>
+      <source src="lab1A_task4.mp4" type="video/mp4">
+    </video>
+    <p>The board has a built-in sensor as peripheral controlled by the microcontroller. I tried to use hand to head up the board, constantly updated data about temperature is printed out on the serial monitor</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 5: Microphone Output</h3>
+    <video width="640" height="360" controls>
+      <source src="lab1A_task5.mp4" type="video/mp4">
+    </video>
+    <p>The board has a built-in microphone. I spoke to the board changing my voice, the board is printing out data about detected sound constantly on the serial monitor.</p>
+  </div>
 
-  <h3>Task 5: Microphone Output</h3>
-  <video width="640" height="360" controls>
-  <source src="lab1A_task5.mp4" type="video/mp4">
-  </video>
-  <p>The board has a built-in microphone. I spoke to the board changing my voice, the board is printing out data about detected sound constantly on the serial monitor.</p>
-
-
+  <div class="section-separator"></div>
   
   <h2>1B</h2>
-  <h3>Prelab</h3>
-  <img src="lab1B_pre_1.png" alt="MAC address printed by Artemis" width="400" height="250">
-  <img src="lab1B_pre_2.png" alt="new UUID generated" width="400" height="250">
-  <img src="lab1B_pre_3.png" alt="updated UUID in ble_arduino.ino" width="400" height="250">
-  <img src="lab1B_pre_4.png" alt="updated MAC address in connections.yaml" width="400" height="250">
-  <p>A new UUID is generated and printed out with MAC address on the laptop. The parameters (BLEService UUID, MAC address) in the connections.yaml and ble_arduino.ino files are both updated.</p>
+  
+  <div class="task">
+    <h3>Prelab</h3>
+    <div class="media-group">
+      <img src="lab1B_pre_1.png" alt="MAC address printed by Artemis" width="400" height="250">
+      <img src="lab1B_pre_2.png" alt="new UUID generated" width="400" height="250">
+      <img src="lab1B_pre_3.png" alt="updated UUID in ble_arduino.ino" width="400" height="250">
+      <img src="lab1B_pre_4.png" alt="updated MAC address in connections.yaml" width="400" height="250">
+    </div>
+    <p>A new UUID is generated and printed out with MAC address on the laptop. The parameters (BLEService UUID, MAC address) in the <code>connections.yaml</code> and <code>ble_arduino.ino</code> files are both updated.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 1: send a string value</h3>
+    <div class="media-group">
+      <img src="lab1B_task1_1.png" alt="task1 python" width="400" height="250">
+      <img src="lab1B_task1_2.png" alt="task1 Arduino" width="400" height="250">
+    </div>
+    <p>A string is sent from computer to the Artemis board using the <code>ECHO</code> command. The computer receive and print an augmented string.</p>
+    <p>Inside the case of <code>ECHO</code>, I initialize a char variable <code>char_arr</code>, used functions (<code>append</code>, <code>get_next_value</code>) to set the form of the string to be printed, then use serial print to print the string in serial monitor.</p>
+    <p>In Jupyter lab, laptop sends command using <code>ble.send_command</code>, and print out the received string with <code>ble.receive_string</code> and print.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 2: send three floats</h3>
+    <div class="media-group">
+      <img src="lab1B_task2_1.png" alt="task2 python" width="400" height="250">
+      <img src="lab1B_task2_2.png" alt="task2 Arduino" width="400" height="250">
+    </div>
+    <p>Three floats (1.20, 2.50, 3.50) in string form were sent to Artemis board using the <code>SEND_THREE_FLOATS</code> command, then the board extract the three floats values from the string in the Arduino sketch.</p>
+    <p>Inside the case of <code>SEND_THREE_FLOATS</code>, I initialize three float variables (<code>float_a</code>, <code>float_b</code>, <code>float_c</code>), then use function <code>get_next_value</code> to extract the floats by order. After that we used serial print to print out extracted floats on serial monitor.</p>
+    <p>In Jupyter lab, laptop sent three floats in this form <code>"1.2|2.5|3.5"</code>, then I observed results printed on serial monitor.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 3: add command GET_TIME_MILLIS</h3>
+    <div class="media-group">
+      <img src="lab1B_task3_2.png" alt="task3 python" width="400" height="250">
+      <img src="lab1B_task3_1.png" alt="task3 Arduino" width="400" height="250">
+      <img src="lab1B_task3_3.png" alt="task3 cmd_types.py" width="400" height="250">
+    </div>
+    <p>A command <code>GET_TIME_MILLIS</code> is added, this command is for making robot reply a string containing time information.</p>
+    <p>A case of <code>GET_TIME_MILLIS</code> is added in the loop, accordingly it is also added in the global variables and cmd_types accordingly. I initialize int variable <code>time</code>, use function <code>millis()</code> to extract current time in milliseconds, store current time data in variable <code>time</code>, then format the extracted information and serial print it.</p>
+    <p>In Jupyter lab, command <code>GET_TIME_MILLIS</code> is called, the printed out string is in form of <code>"T:[current time in milliseconds]"</code></p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 4: notification handler</h3>
+    <img src="lab1B_task4_1.png" alt="task4 python" width="400" height="250">
+    <p>A notification handler is setup in Python to receive string value (BLEStringCharacteristic in Arduino) from the Artemis board. The handler is able to extract time from the string.</p>
+    <p>In Jupyter lab, a function <code>notification_handler</code> is created, parameters are uuid and byte_array. time_string is extracted and then split to delete prefix <code>"T:"</code>. Extracted time is would be printed out then.</p>
+    <p>By calling command <code>start_notify</code> with parameters of uuid and notification_handler, the handler will be started.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 5: time loop</h3>
+    <div class="media-group">
+      <img src="lab1B_task5_3.png" alt="task5 python" width="400" height="250">
+      <img src="lab1B_task5_2.png" alt="task5 Arduino global variable" width="400" height="250">
+      <img src="lab1B_task5_1.png" alt="task5 python" width="400" height="250">
+      <img src="lab1B_task5_4.png" alt="task5 cmd_types.py" width="400" height="250">
+    </div>
+    <p>A loop is written for constantly processing current time sent to computer with notification handler.</p>
+    <p>A new command <code>TIME_LOOP</code> is created, global variables and cmd element are created accordingly. two variables <code>start_time</code> and <code>counter</code> are initialized for counting time stamps. By applying a condition that most updated timestamp should not be 10secs after starting time, timestamps returned within 10 secs were printed on serial monitor and python file with the help of notification_handler. The counter records number of time stamps being extracted.</p>
+    <p>From the printed result, number of time stamps returned is around 312, this number may change everytime according to real-time delay. Thus, the effective data transfer rate of this method is 31.2 readings/secs</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 6: array storing time stamps</h3>
+    <div class="media-group">
+      <img src="lab1B_task6_3.png" alt="task6 python" width="400" height="250">
+      <img src="lab1B_task6_2.png" alt="task6 serial monitor" width="400" height="250">
+      <img src="lab1B_task6_4.png" alt="task6 Arduino" width="400" height="250">
+    </div>
+    <p>An array <code>global_time_array</code> is created for storing time stamps. A command <code>SENT_TIME_DATA</code> is created for looping the array and sending each data point as a string in format <code>"T:[current time]"</code> to laptop to be processed by the notification_handler.</p>
+    <p>I initialized two arrays, one global variable <code>global_time_array</code>, one in scope of case <code>SEND_TIME_DATA</code> <code>time_array</code>. They could store 40 elements. I used two loops, one for storing time data in the array, the other for formatting and returning stored time data in string form.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 7: array storing time stamps and temperature</h3>
+    <div class="media-group">
+      <img src="lab1B_task7_2.png" alt="task7 python temperature data" width="400" height="250">
+      <img src="lab1B_task7_3.png" alt="task7 updated notification handler" width="400" height="250">
+      <img src="lab1B_task7_4.png" alt="task7 processed time & temperature data" width="400" height="250">
+      <img src="lab1B_task7_7.png" alt="task7 Arduino" width="400" height="250">
+      <img src="lab1B_task7_6.png" alt="task7 serial monitor" width="400" height="250">
+    </div>
+    <p>A second array with same size as the time stamp array is created for storing temperature readings. A command <code>GET_TEMP_READINGS</code> is added for looping though both arrays concurrently and sending each temperature reading with a time stamp. The notification handler should parse these strings and add populate the data into two lists.</p>
+    <p>A new case <code>GET_TEMP_READINGS</code> is added, within this case array <code>temp_array</code> with same size of <code>time_array</code> is created. Three loops are implemented, 1st for replicating data from global time array to local time array, 2nd for storing temperature reading into the temp_array, 3rd for formating the timestamps and temperature readings into strings & serial printing them & sending to laptop.</p>
+    <p>The notification handler is updated for slicing string with both time stamps and temperature readings.</p>
+  </div>
+  
+  <div class="task">
+    <h3>Task 8: difference between methods</h3>
+    <div class="media-group">
+      <img src="lab1B_task8_1.png" alt="timing for commands" width="400" height="250">
+      <img src="lab1B_task8_3.png" alt="task8" width="400" height="250">
+      <img src="lab1B_task8_2.png" alt="" width="400" height="250">
+    </div>
+    <p>The <code>TIME_LOOP</code> run for 43 readings in 123ms (2.86ms/message), which corresponds to an effective transfer rate of about 350 messages/sec.</p>
+    <p>When storing timestamps in a global array instead of sending immediately, the <code>SEND_TIME_DATA</code> command transmitted 40 readings in 115ms (2.88ms/message), showing a similar transmission rate but with improved sampling consistency since BLE latency does not interrupt data collection.</p>
+    <p>When storing timestamps and temperature readings, <code>GET_TEMP_READINGS</code> command transmitted 40 readings in 121 ms (3.03 ms per message). This allows paired timestamp and temperature data to be sent together, which is slightly slower but ensures each temperature is aligned with its corresponding time.</p>
+    <p>The first method is simple and suitable for real-time monitoring, but it is limited by BLE speed and can lose timing precision.</p>
+    <p>The second method allows faster and more reliable sampling since data is stored locally and transmitted later, although it uses RAM and requires overflow control.</p>
+    <p>With 384 kB of RAM, storing both timestamp and temperature as 4-byte values each (8 bytes per sample) allows approximately 48,000 samples, though practical limits are lower due to program and BLE stack memory overhead.</p>
+  </div>
 
-  <h3>Task 1: send a string value</h3>
-  <img src="lab1B_task1_1.png" alt="task1 python" width="400" height="250">
-  <img src="lab1B_task1_2.png" alt="task1 Arduino" width="400" height="250">
-  <p>A string is sent from computer to the Artemis board using the ECHO command. The computer receive and print an augmented string.</p>
-  <p>Inside the case of ECHO, I initialize a char variable "char_arr", used functions (append, get_next_value) to set the form of the string to be printed, then use serial print to print the string in serianl monitor.</p>
-  <p>In Jupyter lab, laptop sends command using ble.send_command, and print out the received string with ble.receive_string and print.</p>
-  
-  <h3>Task 2: send three floats</h3>
-  <img src="lab1B_task2_1.png" alt="task2 python" width="400" height="250">
-  <img src="lab1B_task2_2.png" alt="task2 Arduino" width="400" height="250">
-  <p>Three floats (1.20, 2.50, 3.50) in string form were sent to Artemis board using the SEND_THREE_FLOATS command, then the board extract the three floats values from the string in the Arduino sketch.</p>
-  <p>Inside the case of SEND_THREE_FLOATS, I initialize three float variables (float_a, float_b, float_c), then use function get_next_value to extract the floats by order. After that we used serial print to print out extracted floats on serial monitor.</p>
-  <p>In Jupyter lab, laptop sent three floats in this form "1.2|2.5|3.5", then I observed results printed on serial monitor.</p>
-  
-  <h3>Task 3: add command GET_TIME_MILLIS</h3>
-  <img src="lab1B_task3_2.png" alt="task3 python" width="400" height="250">
-  <img src="lab1B_task3_1.png" alt="task3 Arduino" width="400" height="250">
-  <img src="lab1B_task3_3.png" alt="task3 cmd_types.py" width="400" height="250">
-  <p>A command GET_TIME_MILLIS is added, this command is for making robot replya string containing time information.</p>
-  <p>A case of GEAT_TIME_MILLIS is added in the loop, accordingly it is also added in the global variables and cmd_types accordingly. I initialize int variable "time", use function millis() to extract current time in milliseconds, store current time data in variable "time", then format the extracted informaiton and serial print it.</p>
-  <p>In Jupyter lab, command GET_TIME_MILLIS is called, the printed out string is in form of "T:[current time in milliseconds]"</p>
-  
-  <h3>Task 4: notification handler</h3>
-  <img src="lab1B_task4_1.png" alt="task4 python" width="400" height="250">
-  <p>A notification handler is setup in Python to receive string value (BLEStringCharacteristic in Arduino) from the Artemis board. The handler is able to extract time from the string.</p>
-  <p>In Jupyter lab, a function notification_handler is created, parameters are uuid and byte_array. time_string is extracted and then split to delete prefix "T:". Extracted time is would be printed out then.</p>
-  <p>By calling command start_notify with parameters of uuid and notification_handler, the handler will be started.</p>
-  
-  <h3>Task 5: time loop</h3>
-  <img src="lab1B_task5_3.png" alt="task5 python" width="400" height="250">
-  <img src="lab1B_task5_2.png" alt="task5 Arduino global variable" width="400" height="250">
-  <img src="lab1B_task5_1.png" alt="task5 python" width="400" height="250">
-  <img src="lab1B_task5_4.png" alt="task5 cmd_types.py" width="400" height="250">
-  <p>A loop is written for constantly processing current time sent to computer with notification handler.</p>
-  <p>A new command TIME_LOOP is created, global variables and cmd element are created accordingly. two variables "start_time" and "counter" are initialized for counting time stamps. By applying a condition that most updated timestamp should not be 10secs after starting time, timestamps returned within 10 secs were printed on serial monitor and python file with the help of notification_handler. The counter records number of time stamps being extracted.</p>
-  <p>From the printed result, number of time stamps returned is around 312, this number may change everytime according to real-time delay. Thus, the effective data transfer rate of this method is 31.2 readings/secs</p>
-  
-  <h3>Task 6: array storing time stamps</h3>
-  <img src="lab1B_task6_3.png" alt="task6 python" width="400" height="250">
-  <img src="lab1B_task6_2.png" alt="task6 serial monitor" width="400" height="250">
-  <img src="lab1B_task6_4.png" alt="task6 Arduino" width="400" height="250">
-  <p>An array global_time_array is created for storing time stamps. A command SENT_TIME_DATA is created for looping the array and sending each data point as a string in format "T:[current time]" to laptop to be processed by the notification_handler.</p>
-  <p>I initialized two arrays, one global variable "global_time_array", one in scope of case SEND_TIME_DATA "time_array". They could store 40 elements. I used two loops, one for storing time data in the array, the other for formatting and returning stored time data in string form.</p>
-  
-  
-  <h3>Task 7: array storing time stamps and temperature</h3>
-  <img src="lab1B_task7_2.png" alt="task7 python temperature data" width="400" height="250">
-  <img src="lab1B_task7_3.png" alt="task7 updated notification handler" width="400" height="250">
-  <img src="lab1B_task7_4.png" alt="task7 processed time & temperature data" width="400" height="250">
-  <img src="lab1B_task7_7.png" alt="task7 Arduino" width="400" height="250">
-  <img src="lab1B_task7_6.png" alt="task7 serial monitor" width="400" height="250">
-  <p>A second array with same size as the time stamp array is created for storing temperature readings. A command GET_TEMP_READINGS is added for looping though both arrays concurrently and sending each temperature reading with a time stamp. The notification handler should parse these strings and add populate the data into two lists.</p>
-  <p>A new case GET_TEMP_READINGS is added, within this case array "temp_array" with same size of "time_array" is created. Three loops are implemented, 1st for replicating data from global time array to local time array, 2nd for storing temperature reading into the temp_array, 3rd for formating the timestamps and temperature readings into strings & serial printing them & sending to laptop.</p>
-  <p>The notification handler is updated for slicing string with both time stamps and temerature readings.</p>
-
-  <h3>Task 8: difference between methods</h3>
-  <img src="lab1B_task8_1.png" alt="timing for commands" width="400" height="250">
-  <img src="lab1B_task8_3.png" alt="task8" width="400" height="250">
-  <img src="lab1B_task8_2.png" alt="" width="400" height="250">
-  <p>The TIME_LOOP run for 43 readings in 123ms (2.86ms/message), which corresponds to an effective transfer rate of about 350 messages/sec.</p>
-  <p>When storing timestamps in a global array instead of sending immediately, the SEND_TIME_DATA command transmitted 40 readings in 115ms (2.88ms/message), showing a similar transmission rate but with mproved sampling consistency since BLE latency does not interrupt data collection.</p>
-  <p>When storing timestamps and temperature readings, GET_TEMP_READINGS command transmitted 40 readings in 121 ms (3.03 ms per message). This allows paired timestamp and temperature data to be sent together, which is slightly slower but ensures each temperature is aligned with its corresponding time.</p>
-  <p>   </p>
-  <p>The first method is simple and suitable for real-time monitoring, but it is limited by BLE speed and can lose timing precision.</p>
-  <p>The second method allows faster and more reliable sampling since data is stored locally and transmitted later, although it uses RAM and requires overflow control.</p>
-  <p>With 384 kB of RAM, storing both timestamp and temperature as 4-byte values each (8 bytes per sample) allows approximately 48,000 samples, though practical limits are lower due to program and BLE stack memory overhead.</p>
-
-  
-  
   <a href="index.html">⬅ Back to Home</a>
 </body>
 </html>
