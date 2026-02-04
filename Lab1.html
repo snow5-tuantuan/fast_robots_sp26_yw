@@ -39,19 +39,25 @@
   
   <h2>1B</h2>
   <h3>Prelab</h3>
-  <img src="lab1B_pre_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_pre_2.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_pre_3.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_pre_4.png" alt="Serial monitor test" width="400" height="250">
-  <p>       </p>
+  <img src="lab1B_pre_1.png" alt="MAC address printed by Artemis" width="400" height="250">
+  <img src="lab1B_pre_2.png" alt="new UUID generated" width="400" height="250">
+  <img src="lab1B_pre_3.png" alt="updated UUID in ble_arduino.ino" width="400" height="250">
+  <img src="lab1B_pre_4.png" alt="updated MAC address in connections.yaml" width="400" height="250">
+  <p>A new UUID is generated and printed out with MAC address on the laptop. The parameters (BLEService UUID, MAC address) in the connections.yaml and ble_arduino.ino files are both updated.</p>
 
   <h3>Task 1: send a string value</h3>
-  <img src="lab1B_task1_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task1_2.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task1_1.png" alt="task1 python" width="400" height="250">
+  <img src="lab1B_task1_2.png" alt="task1 Arduino" width="400" height="250">
+  <p>A string is sent from computer to the Artemis board using the ECHO command. The computer receive and print an augmented string.</p>
+  <p>Inside the case of ECHO, I initialize a char variable "char_arr", used commands (append, get_next_value) to set the form of the string to be printed, then use serial print to print the string in serianl monitor.</p>
+  <p>In Jupyter lab, laptop sends command using ble.send_command, and print out the received string with ble.receive_string and print.</p>
   
   <h3>Task 2: send three floats</h3>
-  <img src="lab1B_task2_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task2_2.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task2_1.png" alt="task2 python" width="400" height="250">
+  <img src="lab1B_task2_2.png" alt="task2 Arduino" width="400" height="250">
+  <p>three floats (1.20, 2.50, 3.50) in string form were sent to Artemis board using the SEND_THREE_FLOATS command, then the board extract the three floats values from the string in the Arduino sketch.</p>
+  <p>Inside the case of SEND_THREE_FLOATS, I initialize three float variables (float_a, float_b, float_c), then use command get_next_value to extract the floats by order. After that we used serial print to print out extracted floats on serial monitor.</p>
+  <p>In Jupyter lab, laptop sent three floats in this form "1.2|2.5|3.5", then I observed results printed on serial monitor.</p>
   
   <h3>Task 3: add command GET_TIME_MILLIS</h3>
   <img src="lab1B_task3_1.png" alt="Serial monitor test" width="400" height="250">
