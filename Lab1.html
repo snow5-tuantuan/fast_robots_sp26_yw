@@ -83,19 +83,25 @@
   <p>From the printed result, number of time stamps returned is around 312, this number may change everytime according to real-time delay. Thus, the effective data transfer rate of this method is 31.2 readings/secs</p>
   
   <h3>Task 6: array storing time stamps</h3>
-  <img src="lab1B_task6_3.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task6_2.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task6_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task6_4.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task6_5.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task6_3.png" alt="task6 python" width="400" height="250">
+  <img src="lab1B_task6_2.png" alt="task6 serial monitor" width="400" height="250">
+  <img src="lab1B_task6_4.png" alt="task6 Arduino" width="400" height="250">
+  <p>An array global_time_array is created for storing time stamps. A command SENT_TIME_DATA is created for looping the array and sending each data point as a string in format "T:[current time]" to laptop to be processed by the notification_handler.</p>
+  <p>I initialized two arrays, one global variable "global_time_array", one in scope of case SEND_TIME_DATA "time_array". They could store 41 elements. I used two loops, one for storing time data in the array, the other for formatting and returning stored time data in string form.</p>
+  
   
   <h3>Task 7: array storing time stamps and temperature</h3>
-  <img src="lab1B_task7_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task7_2.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task7_3.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task7_4.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task7_5.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task7_6.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task7_2.png" alt="task7 python temperature data" width="400" height="250">
+  <img src="lab1B_task7_3.png" alt="task7 updated notification handler" width="400" height="250">
+  <img src="lab1B_task7_4.png" alt="task7 processed time & temperature data" width="400" height="250">
+  <img src="lab1B_task7_7.png" alt="task7 Arduino" width="400" height="250">
+  <img src="lab1B_task7_6.png" alt="task7 serial monitor" width="400" height="250">
+  <p>A second array with same size as the time stamp array is created for storing temperature readings. A command GET_TEMP_READINGS is added for looping though both arrays concurrently and sending each temperature reading with a time stamp. The notification handler should parse these strings and add populate the data into two lists.</p>
+  <p>A new case GET_TEMP_READINGS is added, within this case array "temp_array" with same size of "time_array" is created. Three loops are implemented, 1st for replicating data from global time array to local time array, 2nd for storing temperature reading into the temp_array, 3rd for formating the timestamps and temperature readings into strings & serial printing them & sending to laptop.</p>
+  <p>The notification handler is updated for slicing string with both time stamps and temerature readings.</p>
+
+  <h3>Task 8: difference between methods</h3>
+  
 
   <a href="index.html">⬅ Back to Home</a>
 </body>
