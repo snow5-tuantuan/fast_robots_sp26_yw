@@ -68,18 +68,24 @@
   <p>In Jupyter lab, command GET_TIME_MILLIS is called, the printed out string is in form of "T:[current time in milliseconds]"</p>
   
   <h3>Task 4: notification handler</h3>
-  <img src="lab1B_task4_1.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task4_1.png" alt="task4 python" width="400" height="250">
+  <p>A notification handler is setup in Python to receive string value (BLEStringCharacteristic in Arduino) from the Artemis board. The handler is able to extract time from the string.</p>
+  <p>In Jupyter lab, a function notification_handler is created, parameters are uuid and byte_array. time_string is extracted and then split to delete prefix "T:". Extracted time is would be printed out then.</p>
+  <p>By calling command start_notify with parameters of uuid and notification_handler, the handler will be started.</p>
   
   <h3>Task 5: time loop</h3>
-  <img src="lab1B_task5_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task5_2.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task5_3.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task5_4.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task5_3.png" alt="task5 python" width="400" height="250">
+  <img src="lab1B_task5_2.png" alt="task5 Arduino global variable" width="400" height="250">
+  <img src="lab1B_task5_1.png" alt="task5 python" width="400" height="250">
+  <img src="lab1B_task5_4.png" alt="task5 cmd_types.py" width="400" height="250">
+  <p>A loop is written for constantly processing current time sent to computer with notification handler.</p>
+  <p>A new command TIME_LOOP is created, global variables and cmd element are created accordingly. two variables "start_time" and "counter" are initialized for counting time stamps. By applying a condition that most updated timestamp should not be 10secs after starting time, timestamps returned within 10 secs were printed on serial monitor and python file with the help of notification_handler. The counter records number of time stamps being extracted.</p>
+  <p>From the printed result, number of time stamps returned is around 312, this number may change everytime according to real-time delay. Thus, the effective data transfer rate of this method is 31.2 readings/secs</p>
   
   <h3>Task 6: array storing time stamps</h3>
-  <img src="lab1B_task6_1.png" alt="Serial monitor test" width="400" height="250">
-  <img src="lab1B_task6_2.png" alt="Serial monitor test" width="400" height="250">
   <img src="lab1B_task6_3.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task6_2.png" alt="Serial monitor test" width="400" height="250">
+  <img src="lab1B_task6_1.png" alt="Serial monitor test" width="400" height="250">
   <img src="lab1B_task6_4.png" alt="Serial monitor test" width="400" height="250">
   <img src="lab1B_task6_5.png" alt="Serial monitor test" width="400" height="250">
   
